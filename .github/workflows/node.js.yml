@@ -26,4 +26,5 @@ jobs:
       - name: Jest Coverage Diff
         uses: anuraag016/Jest-Coverage-Diff@V1.1
         with:
-          delta: 0.5
+          fullCoverageDiff: false
+          delta: 5.5
