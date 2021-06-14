@@ -14,6 +14,12 @@ const positive = (vals) => {
   });
 };
 
+const npositive = (vals) => {
+  return vals.filter((x) => {
+    return x > 0;
+  });
+};
+
 const negative = (vals) => {
   return vals.filter((x) => {
     return x < 0;
@@ -26,4 +32,4 @@ const pnegative = (vals) => {
   });
 };
 
-module.exports = { sum, positive, negative, pnegative };
+module.exports = { sum, positive, negative, pnegative, npositive };
