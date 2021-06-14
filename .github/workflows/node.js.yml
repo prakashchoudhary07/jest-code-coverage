@@ -25,8 +25,3 @@ jobs:
       - run: npm install
       - name: Jest Coverage Diff
         uses: anuraag016/Jest-Coverage-Diff@V1.1
-        with:
-          fullCoverageDiff: true // defaults to false, if made true whole coverage report is commented with the diff
-          runCommand: 'npx jest --collectCoverageFrom=''["src/**/*.{js,jsx,ts,tsx}"]'' --coverage --collectCoverage=true --coverageDirectory=''./'' --coverageReporters=''json-summary'' --forceExit --detectOpenHandles test/.*test.*'
-          delta: 1 // the action will fail if any of the percentage dip is more than 1% for any changed file
-          accessToken: ${{ secrets.GITHUB_TOKEN }}
