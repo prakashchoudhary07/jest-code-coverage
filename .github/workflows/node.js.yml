@@ -5,33 +5,26 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      run: npm install
-    - name: Jest coverage report
-      uses: ArtiomTr/jest-coverage-report-action@v1.3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        threshold: 90 # optional parameter
-        test_script: npm test
-    - name: Jest Coverage Diff
-      uses: anuraag016/Jest-Coverage-Diff@V1.1
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - name: Jest Coverage Diff
+        uses: anuraag016/Jest-Coverage-Diff@V1.1
+        with:
+          fullCoverageDiff: false
+          delta: 5.5
