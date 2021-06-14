@@ -4,7 +4,7 @@
   "description": "increase code coverge",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "npx jest --silent --ci --coverage --coverageReporters='text' --coverageReporters='text-summary'"
   },
   "author": "",
   "license": "ISC",

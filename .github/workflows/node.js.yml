@@ -31,6 +31,6 @@ jobs:
       uses: ArtiomTr/jest-coverage-report-action@v1.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        threshold: 80 # optional parameter
+        threshold: 90 # optional parameter
         test_script: npm test
       
