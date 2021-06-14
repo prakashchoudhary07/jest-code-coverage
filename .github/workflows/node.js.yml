@@ -23,9 +23,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - name: TestCoverage
-        id: testCovergae
-        uses: anuraag016/Jest-Coverage-Diff@master
+      - name: Jest Coverage Diff
+        uses: anuraag016/Jest-Coverage-Diff@V1.1
         with:
           fullCoverageDiff: true // defaults to false, if made true whole coverage report is commented with the diff
           runCommand: 'npx jest --collectCoverageFrom=''["src/**/*.{js,jsx,ts,tsx}"]'' --coverage --collectCoverage=true --coverageDirectory=''./'' --coverageReporters=''json-summary'' --forceExit --detectOpenHandles test/.*test.*'
