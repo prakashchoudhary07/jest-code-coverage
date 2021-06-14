@@ -1,0 +1,15 @@
+{
+  "name": "increase-coverage-ci",
+  "version": "1.0.0",
+  "description": "increase code coverge",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "jest": "^27.0.4"
+  }
+}
