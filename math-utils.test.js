@@ -16,10 +16,10 @@ test('the sum of vals should be 2', () => {
   expect(sum(vals)).toBe(sum_of_vals);
 });
 
-test('should get positive values', () => {
-  expect(positive(vals)).toEqual(pos_vals);
-});
+// test('should get positive values', () => {
+//   expect(positive(vals)).toEqual(pos_vals);
+// });
 
-test('should get negative values', () => {
-  expect(negative(vals)).toEqual(neg_vals);
-});
+// test('should get negative values', () => {
+//   expect(negative(vals)).toEqual(neg_vals);
+// });
