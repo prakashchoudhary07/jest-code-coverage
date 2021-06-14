@@ -27,11 +27,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install dependencies
       run: npm install
-    - name: Jest coverage report
-      uses: ArtiomTr/jest-coverage-report-action@v1.3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        threshold: 89 # optional parameter
-        test_script: npm test
-    - name: Jest Coverage Diff
-      uses: anuraag016/Jest-Coverage-Diff@V1.1
+      run: npm test
+    # - name: Jest coverage report
+    #   uses: ArtiomTr/jest-coverage-report-action@v1.3
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     threshold: 89 # optional parameter
+    #     test_script: npm test
+    # - name: Jest Coverage Diff
+    #   uses: anuraag016/Jest-Coverage-Diff@V1.1
