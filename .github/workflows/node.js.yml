@@ -29,4 +29,4 @@ jobs:
         with:
           fullCoverageDiff: true // defaults to false, if made true whole coverage report is commented with the diff
           runCommand: 'npx jest --collectCoverageFrom=''["src/**/*.{js,jsx,ts,tsx}"]'' --coverage --collectCoverage=true --coverageDirectory=''./'' --coverageReporters=''json-summary'' --forceExit --detectOpenHandles test/.*test.*'
-          delta: 0.5
+          delta: 1 // the action will fail if any of the percentage dip is more than 1% for any changed file
