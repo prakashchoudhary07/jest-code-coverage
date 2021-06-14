@@ -198,4 +198,8 @@ module.exports = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+  displayName: {
+    name: 'JEST test',
+    color: 'blue',
+  },
 };
