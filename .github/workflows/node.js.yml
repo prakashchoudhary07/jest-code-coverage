@@ -25,36 +25,10 @@ jobs:
       - run: npm ci
       - name: TestCoverage
         id: testCovergae
-        uses: anuraag016/Jest-Coverage-Diff@master
+      - name: Jest Coverage Diff
+        # uses: anuraag016/Jest-Coverage-Diff@V1.1
+        uses: anuraag016/Jest-Coverage-Diff@V1.1
         with:
-          fullCoverageDiff: false // defaults to false, if made true whole coverage report is commented with the diff
+          fullCoverageDiff: true // defaults to false, if made true whole coverage report is commented with the diff
           runCommand: 'npx jest --collectCoverageFrom=''["src/**/*.{js,jsx,ts,tsx}"]'' --coverage --collectCoverage=true --coverageDirectory=''./'' --coverageReporters=''json-summary'' --forceExit --detectOpenHandles test/.*test.*'
           delta: 0.5
-# jobs:
-#   build:
-
-#     runs-on: ubuntu-latest
-
-#     strategy:
-#       matrix:
-#         node-version: [14.x]
-#         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Use Node.js ${{ matrix.node-version }}
-#       uses: actions/setup-node@v1
-#       with:
-#         node-version: ${{ matrix.node-version }}
-#     - name: Install dependencies
-#       run: npm install
-#     - name: run test
-#       run: npm test
-#     # - name: Jest coverage report
-#     #   uses: ArtiomTr/jest-coverage-report-action@v1.3
-#     #   with:
-#     #     github_token: ${{ secrets.GITHUB_TOKEN }}
-#     #     threshold: 89 # optional parameter
-#     #     test_script: npm test
-#     # - name: Jest Coverage Diff
-#     #   uses: anuraag016/Jest-Coverage-Diff@V1.1
