@@ -25,3 +25,5 @@ jobs:
       - run: npm install
       - name: Jest Coverage Diff
         uses: anuraag016/Jest-Coverage-Diff@V1.1
+        with:
+          delta: 0.5
