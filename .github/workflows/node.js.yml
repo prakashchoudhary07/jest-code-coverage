@@ -33,4 +33,3 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         threshold: 90 # optional parameter
         test_script: npm test
-      
