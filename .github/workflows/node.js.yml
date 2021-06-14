@@ -33,3 +33,5 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         threshold: 90 # optional parameter
         test_script: npm test
+    - name: Jest Coverage Diff
+      uses: anuraag016/Jest-Coverage-Diff@V1.1
